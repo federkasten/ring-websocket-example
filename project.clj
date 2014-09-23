@@ -4,14 +4,12 @@
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [compojure "1.1.8"]
                  [javax.servlet/javax.servlet-api "3.1.0"]
-                 [ring-jetty/ring-ws "0.1.0-SNAPSHOT"]]
-  :plugins [[lein-ring "0.8.12-SNAPSHOT"]]
+                 [ring-jetty/ring-ws "0.1.0-SNAPSHOT"]
+                 [ring-jetty/ring-servlet "0.1.0-SNAPSHOT"]]
+  :plugins [[lein-ring-jetty "0.1.0-SNAPSHOT"]]
   :ring {:handler foo.handler/app
-         :websockets {"/echo" {:on-connect foo.echo/on-connect
-                               :on-error foo.echo/on-error
-                               :on-close foo.echo/on-close
-                               :on-text foo.echo/on-text
-                               :on-bytes foo.echo/on-error}}}
+         :websockets {"/echo" foo.echo/handler
+                      "/test" foo.echo/handler}}
   :profiles
   {:dev {:dependencies [[javax.servlet/javax.servlet-api "3.1.0"]
                         [ring-mock "0.1.5"]]}})
