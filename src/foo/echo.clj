@@ -1,12 +1,12 @@
 (ns foo.echo
-  (:require [ring.adapter.jetty9 :refer [send! close! remote-addr idle-timeout!]]))
+  (:require [ring-jetty.util.ws :as ws]))
 
 (defn on-connect [session]
   (println "connected"))
 
 (defn on-text [session message]
   (println message)
-  (send! session (str "foo.echo says " message)))
+  (ws/send! session (str "foo.echo says : " message)))
 
 (defn on-bytes [session payload offset len]
   (println payload)

@@ -2,7 +2,9 @@
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
   :dependencies [[org.clojure/clojure "1.6.0"]
-                 [compojure "1.1.8"]]
+                 [compojure "1.1.8"]
+                 [javax.servlet/javax.servlet-api "3.1.0"]
+                 [ring-jetty/ring-ws "0.1.0-SNAPSHOT"]]
   :plugins [[lein-ring "0.8.12-SNAPSHOT"]]
   :ring {:handler foo.handler/app
          :websockets {"/echo" {:on-connect foo.echo/on-connect
