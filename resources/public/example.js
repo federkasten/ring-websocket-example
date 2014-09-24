@@ -1,6 +1,6 @@
 (function() {
     var start = function () {
-        var socket = new WebSocket("ws://ws-dev:3000/echo/");
+        var socket = new WebSocket("ws://" + window.location.host + window.location.pathname + "echo/");
 
         var messageBox = document.getElementById("message");
 
