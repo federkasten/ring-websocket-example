@@ -1,4 +1,4 @@
-(ns foo.echo
+(ns ring-websocket-example.echo
   (:require [ring-jetty.util.ws :as ws]))
 
 (defn- on-connect [session]

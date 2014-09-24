@@ -1,8 +1,8 @@
-(ns foo.handler
+(ns ring-websocket-example.handler
   (:require [compojure.core :refer :all]
             [compojure.handler :as handler]
             [compojure.route :as route]
-            [foo.echo]))
+            [ring-websocket-example.echo]))
 
 (defroutes app-routes
   (GET "/" [] "Hello World")
