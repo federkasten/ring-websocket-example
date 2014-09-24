@@ -1,6 +1,12 @@
 # About
 
-An example project for websocket server using ring-jetty
+An example project for websocket application using:
+
+- [ring-jetty](https://github.com/federkasten/ring-jetty)
+- [ring-jetty-server](https://github.com/federkasten/ring-jetty-server)
+- [lein-ring-jetty](https://github.com/federkasten/lein-ring-jetty)
+
+These projects are WIP, may contains some bugs.
 
 # Usage
 
