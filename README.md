@@ -6,7 +6,7 @@ An example project for websocket application using:
 - [ring-jetty-server](https://github.com/federkasten/ring-jetty-server)
 - [lein-ring-jetty](https://github.com/federkasten/lein-ring-jetty)
 
-These projects are WIP, may contains some bugs.
+These projects are WIP, may contain some bugs.
 
 # Usage
 
