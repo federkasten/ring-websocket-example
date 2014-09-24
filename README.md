@@ -8,6 +8,9 @@ An example project for websocket application using:
 
 These projects are WIP, may contain some bugs.
 
+And these ring/lein-ring forks heavily depend on Jetty9.
+It is not compatible with other application containers and server frameworks
+
 # Usage
 
 ## Running
