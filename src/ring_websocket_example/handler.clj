@@ -3,10 +3,9 @@
             [compojure.handler :as handler]
             [compojure.route :as route]
             [hiccup.core :refer :all]
-            [hiccup.page :refer :all]
-            [ring-websocket-example.echo]))
+            [hiccup.page :refer :all]))
 
-(defn page []
+(defn- page []
   (html5 [:head [:title "Ring WebSocket Example"] (include-js "example.js")]
          [:body
           [:div#form
