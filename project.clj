@@ -2,7 +2,8 @@
   :description "An example project for websocket server using ring-jetty"
   :url "https://github.com/federkasten/ring-websocket-example"
   :dependencies [[org.clojure/clojure "1.6.0"]
-                 [compojure "1.1.8"]
+                 [compojure "1.1.9"]
+                 [hiccup "1.0.5"]
                  [ring-jetty/ring-ws "0.1.0-SNAPSHOT"]]
   :plugins [[lein-ring-jetty "0.1.0-SNAPSHOT"]]
   :ring {:handler ring-websocket-example.handler/app

@@ -1,23 +1,30 @@
 (ns ring-websocket-example.echo
   (:require [ring-jetty.util.ws :as ws]))
 
+(def all-sessions (ref #{}))
+
 (defn- on-connect [session]
-  (println "connected"))
-
-(defn- on-text [session message]
-  (println message)
-  (ws/send! session (str "foo.echo says : " message)))
-
-(defn- on-bytes [session payload offset len]
-  (println payload)
-  payload)
+  (dosync
+   (alter all-sessions conj session)))
 
 (defn- on-close [session code reason]
-  (println "closed"))
+  (dosync
+   (alter all-sessions disj session)))
+
+(defn- on-text [session message]
+  (doseq [s @all-sessions]
+    (ws/send! s (str
+                 (.. session getSession getRemoteAddress getHostName)
+                 ":"
+                 message))))
+
+(defn- on-bytes [session payload offset len]
+  nil)
 
 (defn- on-error [session e]
-  (println "error")
-  (.printStackTrace e))
+  (.printStackTrace e)
+  (dosync
+   (alter all-sessions disj session)))
 
 (def handler
   {:on-connect on-connect
